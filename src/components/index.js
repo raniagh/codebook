@@ -1,2 +1,2 @@
-export { Header } from "./Header";
-export { Footer } from "./Footer";
+export { Header } from "./Layouts/Header";
+export { Footer } from "./Layouts/Footer";
