@@ -238,5 +238,12 @@
     }
   ],
   "orders": [],
-  "users": []
+  "users": [
+    {
+      "email": "ghzaielrania@gmail.com",
+      "password": "$2a$10$Yx.b7pfiS8HhOebk60P19e2V2BQ1Ynn9a2PVcHNdQXko1V/V1pD3G",
+      "name": "rania",
+      "id": 1
+    }
+  ]
 }
