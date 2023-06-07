@@ -6,6 +6,7 @@ import { DropdownLoggedOut } from "../Elements/DropdownLoggedOut";
 import { DropdownLoggedIn } from "../Elements/DropdownLoggedIn";
 
 export const Header = () => {
+  const token = JSON.parse(sessionStorage.getItem("token"));
   const [show, setShow] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [darkMode, setDrakMode] = useState(
@@ -51,7 +52,12 @@ export const Header = () => {
               className="bi bi-person-circle cursor-pointer text-2xl text-gray-700 dark:text-white"
               onClick={() => setDropdown(!dropdown)}
             ></span>
-            {dropdown && <DropdownLoggedOut />}
+            {dropdown &&
+              (token ? (
+                <DropdownLoggedIn setDropdown={setDropdown} />
+              ) : (
+                <DropdownLoggedOut setDropdown={setDropdown} />
+              ))}
           </div>
         </div>
       </nav>
