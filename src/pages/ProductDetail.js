@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Rating } from "../components";
 import { useParams } from "react-router-dom";
+import { useTitle } from "../hooks/useTitle";
+import { Rating } from "../components";
 
 export const ProductDetail = () => {
   const { id } = useParams();
@@ -16,7 +17,7 @@ export const ProductDetail = () => {
     in_stock,
     size,
   } = product;
-
+  useTitle(name);
   useEffect(() => {
     async function fetchProduct() {
       const response = await fetch(`http://localhost:8000/products/${id}`);

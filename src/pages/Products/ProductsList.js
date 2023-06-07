@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { useTitle } from "../../hooks/useTitle";
 import { FilterBar } from "./components/FilterBar";
 import { ProductCard } from "../../components";
-import { useLocation } from "react-router-dom";
 
 export const ProductsList = () => {
+  useTitle("Explore eBooks Collection");
   const [show, setShow] = useState(false);
   const [products, setProducts] = useState([]);
   const search = useLocation().search;
@@ -20,7 +22,7 @@ export const ProductsList = () => {
       setProducts(data);
     }
     fetchProducts();
-  }, []);
+  }, [searchTerm]);
   return (
     <main>
       <section className="my-5">
