@@ -3,6 +3,7 @@ import {
   CartPage,
   HomePage,
   Login,
+  OrderPage,
   ProductDetail,
   ProductsList,
   Register,
@@ -25,6 +26,14 @@ export const Allroutes = () => {
           element={
             <ProtectedRoute>
               <CartPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="order-summary"
+          element={
+            <ProtectedRoute>
+              <OrderPage />
             </ProtectedRoute>
           }
         />
