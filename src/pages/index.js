@@ -5,3 +5,4 @@ export { Login } from "./Login";
 export { Register } from "./Register";
 export { CartPage } from "../pages/Cart/CartPage";
 export { OrderPage } from "../pages/Order/OrderPage";
+export { DashbaordPage } from "../pages/Dashboard/DashboardPage";

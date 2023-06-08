@@ -34,7 +34,7 @@ export const DropdownLoggedIn = ({ setDropdown }) => {
         <li>
           <Link
             onClick={() => setDropdown(false)}
-            href="/dashboard"
+            to="/dashboard"
             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
           >
             Dashboard
