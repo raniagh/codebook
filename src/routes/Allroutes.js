@@ -7,6 +7,7 @@ import {
   ProductsList,
   Register,
 } from "../pages";
+import { ProtectedRoute } from "./ProtectedRoute";
 
 export const Allroutes = () => {
   return (
@@ -19,7 +20,14 @@ export const Allroutes = () => {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
 
-        <Route path="cart" element={<CartPage />} />
+        <Route
+          path="cart"
+          element={
+            <ProtectedRoute>
+              <CartPage />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </div>
   );
