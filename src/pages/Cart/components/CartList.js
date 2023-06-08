@@ -38,7 +38,7 @@ export const CartList = () => {
           </button>
         </div>
       </section>
-      {checkout && <Checkout setCheckout={setCheckout} />}
+      {checkout && <Checkout setCheckout={setCheckout} total={total} />}
     </>
   );
 };
