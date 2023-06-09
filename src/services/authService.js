@@ -5,6 +5,9 @@ export const login = async (authDetail) => {
     body: JSON.stringify(authDetail),
   };
   const response = await fetch("http://localhost:8000/login", requestOptions);
+  if (!response.ok) {
+    throw { message: response.statusText, status: response.status };
+  }
   const data = await response.json();
 
   if (data.accessToken) {
@@ -24,6 +27,9 @@ export const register = async (authDetail) => {
     "http://localhost:8000/register",
     requestOptions
   );
+  if (!response.ok) {
+    throw { message: response.statusText, status: response.status };
+  }
   const data = await response.json();
 
   if (data.accessToken) {
