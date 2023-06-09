@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
 import { useTitle } from "../../hooks/useTitle";
 
 import { FilterBar } from "./components/FilterBar";
@@ -7,7 +8,6 @@ import { ProductCard } from "../../components";
 
 import { useFilter } from "../../context";
 import { getProductList } from "../../services";
-import { toast } from "react-toastify";
 
 export const ProductsList = () => {
   const [show, setShow] = useState(false);
