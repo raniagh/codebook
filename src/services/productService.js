@@ -13,7 +13,9 @@ export async function getProductList(searchTerm) {
 }
 
 export const getProduct = async (id) => {
-  const response = await fetch(`http://localhost:8000/444/products/${id}`);
+  const response = await fetch(
+    `${process.env.REACT_APP_HOST}/660/orders/444/products/${id}`
+  );
   if (!response.ok) {
     throw { message: response.statusText, status: response.status };
   }
@@ -22,7 +24,9 @@ export const getProduct = async (id) => {
 };
 
 export const getFeaturedList = async () => {
-  const response = await fetch("http://localhost:8000/444/featured_products");
+  const response = await fetch(
+    `${process.env.REACT_APP_HOST}/660/orders/444/featured_products`
+  );
   if (!response.ok) {
     throw { message: response.statusText, status: response.status };
   }

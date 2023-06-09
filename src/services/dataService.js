@@ -16,7 +16,7 @@ export const getUser = async () => {
   //we use 600 code to restict access to some ressources
   //User loggedIn only has access to own ressources
   const response = await fetch(
-    `http://localhost:8000/600/users/${cbid}`,
+    `${process.env.REACT_APP_HOST}/600/users/${cbid}`,
     requestOptions
   );
   if (!response.ok) {
@@ -38,7 +38,7 @@ export const createOrder = async (cartList, total, user) => {
       id: user.id,
     },
   };
-  const response = await fetch("http://localhost:8000/660/orders", {
+  const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -56,7 +56,7 @@ export const createOrder = async (cartList, total, user) => {
 export const getUserOrders = async () => {
   const { token, cbid } = getSession();
   const response = await fetch(
-    `http://localhost:8000/660/orders?user.id=${cbid}`,
+    `${process.env.REACT_APP_HOST}/660/orders/660/orders?user.id=${cbid}`,
     {
       method: "GET",
       headers: {
