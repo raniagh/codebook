@@ -1,7 +1,7 @@
 export async function getProductList(searchTerm) {
   const response = await fetch(
     //444: no one can create a ressource but can read it
-    `http://localhost:8000/444/prducts?name_like=${
+    `${process.env.REACT_APP_HOST}/444/products?name_like=${
       searchTerm ? searchTerm : ""
     }`
   );
@@ -14,7 +14,7 @@ export async function getProductList(searchTerm) {
 
 export const getProduct = async (id) => {
   const response = await fetch(
-    `${process.env.REACT_APP_HOST}/660/orders/444/products/${id}`
+    `${process.env.REACT_APP_HOST}/444/products/${id}`
   );
   if (!response.ok) {
     throw { message: response.statusText, status: response.status };
@@ -25,7 +25,7 @@ export const getProduct = async (id) => {
 
 export const getFeaturedList = async () => {
   const response = await fetch(
-    `${process.env.REACT_APP_HOST}/660/orders/444/featured_products`
+    `${process.env.REACT_APP_HOST}/444/featured_products`
   );
   if (!response.ok) {
     throw { message: response.statusText, status: response.status };
