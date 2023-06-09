@@ -22,7 +22,7 @@ export const ProductsList = () => {
       initialProductList(data);
     }
     fetchProducts();
-  }, []);
+  }, [initialProductList, searchTerm]);
 
   return (
     <main>

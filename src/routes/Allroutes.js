@@ -5,6 +5,7 @@ import {
   HomePage,
   Login,
   OrderPage,
+  PageNotFound,
   ProductDetail,
   ProductsList,
   Register,
@@ -46,6 +47,8 @@ export const Allroutes = () => {
             </ProtectedRoute>
           }
         />
+
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
   );
