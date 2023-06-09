@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle";
+
 import { FilterBar } from "./components/FilterBar";
 import { ProductCard } from "../../components";
+
 import { useFilter } from "../../context";
+import { getProductList } from "../../services";
 
 export const ProductsList = () => {
   const [show, setShow] = useState(false);
@@ -15,17 +18,11 @@ export const ProductsList = () => {
 
   useEffect(() => {
     async function fetchProducts() {
-      const reponse = await fetch(
-        `http://localhost:8000/products?name_like=${
-          searchTerm ? searchTerm : ""
-        }`
-      );
-      const data = await reponse.json();
-      //setProducts(data);
+      const data = await getProductList(searchTerm);
       initialProductList(data);
     }
     fetchProducts();
-  }, [searchTerm]);
+  }, []);
 
   return (
     <main>
